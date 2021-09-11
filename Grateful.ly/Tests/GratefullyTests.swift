@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Grateful_ly
+@testable import Gratefully
 
 class GratefullyTests: XCTestCase {
 

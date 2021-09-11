@@ -8,15 +8,13 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    var body: some View {
-        Text("Hello, world!")
-            .padding()
-    }
-}
+#warning("TODO: Update project structure naming 🙏")
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+@main
+struct GratefullyApp: App {
+    var body: some Scene {
+        WindowGroup {
+            MainView()
+        }
     }
 }

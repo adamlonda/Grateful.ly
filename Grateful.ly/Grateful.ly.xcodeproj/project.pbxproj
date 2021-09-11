@@ -8,22 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		9142845826ECB62D005A0E12 /* GratefullyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9142845726ECB62D005A0E12 /* GratefullyApp.swift */; };
-		9142845A26ECB62D005A0E12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9142845926ECB62D005A0E12 /* ContentView.swift */; };
+		9142845A26ECB62D005A0E12 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9142845926ECB62D005A0E12 /* MainView.swift */; };
 		9142845C26ECB632005A0E12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9142845B26ECB632005A0E12 /* Assets.xcassets */; };
 		9142845F26ECB632005A0E12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9142845E26ECB632005A0E12 /* Preview Assets.xcassets */; };
 		9142846A26ECB632005A0E12 /* GratefullyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9142846926ECB632005A0E12 /* GratefullyTests.swift */; };
-		9142847526ECB632005A0E12 /* GratefullyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9142847426ECB632005A0E12 /* GratefullyUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		9142846626ECB632005A0E12 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9142844C26ECB62C005A0E12 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9142845326ECB62D005A0E12;
-			remoteInfo = Grateful.ly;
-		};
-		9142847126ECB632005A0E12 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9142844C26ECB62C005A0E12 /* Project object */;
 			proxyType = 1;
@@ -35,16 +27,13 @@
 /* Begin PBXFileReference section */
 		9142845426ECB62D005A0E12 /* Grateful.ly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grateful.ly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9142845726ECB62D005A0E12 /* GratefullyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratefullyApp.swift; sourceTree = "<group>"; };
-		9142845926ECB62D005A0E12 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9142845926ECB62D005A0E12 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		9142845B26ECB632005A0E12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9142845E26ECB632005A0E12 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9142846026ECB632005A0E12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9142846526ECB632005A0E12 /* Grateful.lyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Grateful.lyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9142846526ECB632005A0E12 /* GratefullyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GratefullyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9142846926ECB632005A0E12 /* GratefullyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratefullyTests.swift; sourceTree = "<group>"; };
 		9142846B26ECB632005A0E12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9142847026ECB632005A0E12 /* Grateful.lyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Grateful.lyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9142847426ECB632005A0E12 /* GratefullyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratefullyUITests.swift; sourceTree = "<group>"; };
-		9142847626ECB632005A0E12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,22 +51,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9142846D26ECB632005A0E12 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		9142844B26ECB62C005A0E12 = {
 			isa = PBXGroup;
 			children = (
-				9142845626ECB62D005A0E12 /* Grateful.ly */,
-				9142846826ECB632005A0E12 /* Grateful.lyTests */,
-				9142847326ECB632005A0E12 /* Grateful.lyUITests */,
+				9142845626ECB62D005A0E12 /* App */,
+				9142846826ECB632005A0E12 /* Tests */,
 				9142845526ECB62D005A0E12 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,22 +67,21 @@
 			isa = PBXGroup;
 			children = (
 				9142845426ECB62D005A0E12 /* Grateful.ly.app */,
-				9142846526ECB632005A0E12 /* Grateful.lyTests.xctest */,
-				9142847026ECB632005A0E12 /* Grateful.lyUITests.xctest */,
+				9142846526ECB632005A0E12 /* GratefullyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9142845626ECB62D005A0E12 /* Grateful.ly */ = {
+		9142845626ECB62D005A0E12 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				91EB119926ED1F8900B7FC13 /* UI */,
 				9142845726ECB62D005A0E12 /* GratefullyApp.swift */,
-				9142845926ECB62D005A0E12 /* ContentView.swift */,
 				9142845B26ECB632005A0E12 /* Assets.xcassets */,
 				9142846026ECB632005A0E12 /* Info.plist */,
 				9142845D26ECB632005A0E12 /* Preview Content */,
 			);
-			path = Grateful.ly;
+			path = App;
 			sourceTree = "<group>";
 		};
 		9142845D26ECB632005A0E12 /* Preview Content */ = {
@@ -112,22 +92,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		9142846826ECB632005A0E12 /* Grateful.lyTests */ = {
+		9142846826ECB632005A0E12 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				9142846926ECB632005A0E12 /* GratefullyTests.swift */,
 				9142846B26ECB632005A0E12 /* Info.plist */,
 			);
-			path = Grateful.lyTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
-		9142847326ECB632005A0E12 /* Grateful.lyUITests */ = {
+		91EB119926ED1F8900B7FC13 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				9142847426ECB632005A0E12 /* GratefullyUITests.swift */,
-				9142847626ECB632005A0E12 /* Info.plist */,
+				9142845926ECB62D005A0E12 /* MainView.swift */,
 			);
-			path = Grateful.lyUITests;
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,9 +130,9 @@
 			productReference = 9142845426ECB62D005A0E12 /* Grateful.ly.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9142846426ECB632005A0E12 /* Grateful.lyTests */ = {
+		9142846426ECB632005A0E12 /* GratefullyTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9142847C26ECB632005A0E12 /* Build configuration list for PBXNativeTarget "Grateful.lyTests" */;
+			buildConfigurationList = 9142847C26ECB632005A0E12 /* Build configuration list for PBXNativeTarget "GratefullyTests" */;
 			buildPhases = (
 				9142846126ECB632005A0E12 /* Sources */,
 				9142846226ECB632005A0E12 /* Frameworks */,
@@ -164,28 +143,10 @@
 			dependencies = (
 				9142846726ECB632005A0E12 /* PBXTargetDependency */,
 			);
-			name = Grateful.lyTests;
+			name = GratefullyTests;
 			productName = Grateful.lyTests;
-			productReference = 9142846526ECB632005A0E12 /* Grateful.lyTests.xctest */;
+			productReference = 9142846526ECB632005A0E12 /* GratefullyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		9142846F26ECB632005A0E12 /* Grateful.lyUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9142847F26ECB632005A0E12 /* Build configuration list for PBXNativeTarget "Grateful.lyUITests" */;
-			buildPhases = (
-				9142846C26ECB632005A0E12 /* Sources */,
-				9142846D26ECB632005A0E12 /* Frameworks */,
-				9142846E26ECB632005A0E12 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9142847226ECB632005A0E12 /* PBXTargetDependency */,
-			);
-			name = Grateful.lyUITests;
-			productName = Grateful.lyUITests;
-			productReference = 9142847026ECB632005A0E12 /* Grateful.lyUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -200,10 +161,6 @@
 						CreatedOnToolsVersion = 12.5.1;
 					};
 					9142846426ECB632005A0E12 = {
-						CreatedOnToolsVersion = 12.5.1;
-						TestTargetID = 9142845326ECB62D005A0E12;
-					};
-					9142846F26ECB632005A0E12 = {
 						CreatedOnToolsVersion = 12.5.1;
 						TestTargetID = 9142845326ECB62D005A0E12;
 					};
@@ -223,8 +180,7 @@
 			projectRoot = "";
 			targets = (
 				9142845326ECB62D005A0E12 /* Grateful.ly */,
-				9142846426ECB632005A0E12 /* Grateful.lyTests */,
-				9142846F26ECB632005A0E12 /* Grateful.lyUITests */,
+				9142846426ECB632005A0E12 /* GratefullyTests */,
 			);
 		};
 /* End PBXProject section */
@@ -240,13 +196,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		9142846326ECB632005A0E12 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9142846E26ECB632005A0E12 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -281,7 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9142845A26ECB62D005A0E12 /* ContentView.swift in Sources */,
+				9142845A26ECB62D005A0E12 /* MainView.swift in Sources */,
 				9142845826ECB62D005A0E12 /* GratefullyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,14 +243,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9142846C26ECB632005A0E12 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9142847526ECB632005A0E12 /* GratefullyUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -309,11 +250,6 @@
 			isa = PBXTargetDependency;
 			target = 9142845326ECB62D005A0E12 /* Grateful.ly */;
 			targetProxy = 9142846626ECB632005A0E12 /* PBXContainerItemProxy */;
-		};
-		9142847226ECB632005A0E12 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9142845326ECB62D005A0E12 /* Grateful.ly */;
-			targetProxy = 9142847126ECB632005A0E12 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -440,16 +376,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Grateful.ly/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"App/Preview Content\"";
 				DEVELOPMENT_TEAM = 6KGZ86RN37;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Grateful.ly/Info.plist;
+				INFOPLIST_FILE = App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = adamlonda.grateful.ly;
+				PRODUCT_MODULE_NAME = Gratefully;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -462,16 +399,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Grateful.ly/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"App/Preview Content\"";
 				DEVELOPMENT_TEAM = 6KGZ86RN37;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Grateful.ly/Info.plist;
+				INFOPLIST_FILE = App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = adamlonda.grateful.ly;
+				PRODUCT_MODULE_NAME = Gratefully;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -485,14 +423,14 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6KGZ86RN37;
-				INFOPLIST_FILE = Grateful.lyTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "adamlonda.Grateful-lyTests";
+				PRODUCT_BUNDLE_IDENTIFIER = adamlonda.GratefullyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -507,58 +445,18 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6KGZ86RN37;
-				INFOPLIST_FILE = Grateful.lyTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "adamlonda.Grateful-lyTests";
+				PRODUCT_BUNDLE_IDENTIFIER = adamlonda.GratefullyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Grateful.ly.app/Grateful.ly";
-			};
-			name = Release;
-		};
-		9142848026ECB632005A0E12 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6KGZ86RN37;
-				INFOPLIST_FILE = Grateful.lyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "adamlonda.Grateful-lyUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Grateful.ly;
-			};
-			name = Debug;
-		};
-		9142848126ECB632005A0E12 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6KGZ86RN37;
-				INFOPLIST_FILE = Grateful.lyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "adamlonda.Grateful-lyUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Grateful.ly;
 			};
 			name = Release;
 		};
@@ -583,20 +481,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9142847C26ECB632005A0E12 /* Build configuration list for PBXNativeTarget "Grateful.lyTests" */ = {
+		9142847C26ECB632005A0E12 /* Build configuration list for PBXNativeTarget "GratefullyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9142847D26ECB632005A0E12 /* Debug */,
 				9142847E26ECB632005A0E12 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9142847F26ECB632005A0E12 /* Build configuration list for PBXNativeTarget "Grateful.lyUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9142848026ECB632005A0E12 /* Debug */,
-				9142848126ECB632005A0E12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
