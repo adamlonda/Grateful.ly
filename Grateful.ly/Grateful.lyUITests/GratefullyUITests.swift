@@ -1,8 +1,9 @@
 //
-//  GratefullyUITests.swift
-//  Grateful.lyUITests
+//  This code is created under the GNU GPL v3 license.
+//  If you haven't received license copy with this code, see:
+//  https://www.gnu.org/licenses/gpl-3.0.en.html
 //
-//  Created by Adam Londa on 11.09.2021.
+//  Copyright © 2021 Adam Londa. All rights reserved
 //
 
 import XCTest
