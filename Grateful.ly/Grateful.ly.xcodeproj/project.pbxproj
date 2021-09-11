@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9142845826ECB62D005A0E12 /* Grateful_lyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9142845726ECB62D005A0E12 /* Grateful_lyApp.swift */; };
+		9142845826ECB62D005A0E12 /* GratefullyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9142845726ECB62D005A0E12 /* GratefullyApp.swift */; };
 		9142845A26ECB62D005A0E12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9142845926ECB62D005A0E12 /* ContentView.swift */; };
 		9142845C26ECB632005A0E12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9142845B26ECB632005A0E12 /* Assets.xcassets */; };
 		9142845F26ECB632005A0E12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9142845E26ECB632005A0E12 /* Preview Assets.xcassets */; };
-		9142846A26ECB632005A0E12 /* Grateful_lyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9142846926ECB632005A0E12 /* Grateful_lyTests.swift */; };
-		9142847526ECB632005A0E12 /* Grateful_lyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9142847426ECB632005A0E12 /* Grateful_lyUITests.swift */; };
+		9142846A26ECB632005A0E12 /* GratefullyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9142846926ECB632005A0E12 /* GratefullyTests.swift */; };
+		9142847526ECB632005A0E12 /* GratefullyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9142847426ECB632005A0E12 /* GratefullyUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,16 +34,16 @@
 
 /* Begin PBXFileReference section */
 		9142845426ECB62D005A0E12 /* Grateful.ly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grateful.ly.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9142845726ECB62D005A0E12 /* Grateful_lyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grateful_lyApp.swift; sourceTree = "<group>"; };
+		9142845726ECB62D005A0E12 /* GratefullyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratefullyApp.swift; sourceTree = "<group>"; };
 		9142845926ECB62D005A0E12 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9142845B26ECB632005A0E12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9142845E26ECB632005A0E12 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9142846026ECB632005A0E12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9142846526ECB632005A0E12 /* Grateful.lyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Grateful.lyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9142846926ECB632005A0E12 /* Grateful_lyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grateful_lyTests.swift; sourceTree = "<group>"; };
+		9142846926ECB632005A0E12 /* GratefullyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratefullyTests.swift; sourceTree = "<group>"; };
 		9142846B26ECB632005A0E12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9142847026ECB632005A0E12 /* Grateful.lyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Grateful.lyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9142847426ECB632005A0E12 /* Grateful_lyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grateful_lyUITests.swift; sourceTree = "<group>"; };
+		9142847426ECB632005A0E12 /* GratefullyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratefullyUITests.swift; sourceTree = "<group>"; };
 		9142847626ECB632005A0E12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,7 +95,7 @@
 		9142845626ECB62D005A0E12 /* Grateful.ly */ = {
 			isa = PBXGroup;
 			children = (
-				9142845726ECB62D005A0E12 /* Grateful_lyApp.swift */,
+				9142845726ECB62D005A0E12 /* GratefullyApp.swift */,
 				9142845926ECB62D005A0E12 /* ContentView.swift */,
 				9142845B26ECB632005A0E12 /* Assets.xcassets */,
 				9142846026ECB632005A0E12 /* Info.plist */,
@@ -115,7 +115,7 @@
 		9142846826ECB632005A0E12 /* Grateful.lyTests */ = {
 			isa = PBXGroup;
 			children = (
-				9142846926ECB632005A0E12 /* Grateful_lyTests.swift */,
+				9142846926ECB632005A0E12 /* GratefullyTests.swift */,
 				9142846B26ECB632005A0E12 /* Info.plist */,
 			);
 			path = Grateful.lyTests;
@@ -124,7 +124,7 @@
 		9142847326ECB632005A0E12 /* Grateful.lyUITests */ = {
 			isa = PBXGroup;
 			children = (
-				9142847426ECB632005A0E12 /* Grateful_lyUITests.swift */,
+				9142847426ECB632005A0E12 /* GratefullyUITests.swift */,
 				9142847626ECB632005A0E12 /* Info.plist */,
 			);
 			path = Grateful.lyUITests;
@@ -140,6 +140,7 @@
 				9142845026ECB62D005A0E12 /* Sources */,
 				9142845126ECB62D005A0E12 /* Frameworks */,
 				9142845226ECB62D005A0E12 /* Resources */,
+				9142848226ECBD73005A0E12 /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -254,13 +255,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9142848226ECBD73005A0E12 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9142845026ECB62D005A0E12 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9142845A26ECB62D005A0E12 /* ContentView.swift in Sources */,
-				9142845826ECB62D005A0E12 /* Grateful_lyApp.swift in Sources */,
+				9142845826ECB62D005A0E12 /* GratefullyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9142846A26ECB632005A0E12 /* Grateful_lyTests.swift in Sources */,
+				9142846A26ECB632005A0E12 /* GratefullyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9142847526ECB632005A0E12 /* Grateful_lyUITests.swift in Sources */,
+				9142847526ECB632005A0E12 /* GratefullyUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

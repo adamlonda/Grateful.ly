@@ -1,6 +1,6 @@
 //
-//  Grateful_lyTests.swift
-//  Grateful.lyTests
+//  GratefullyTests.swift
+//  GratefullyTests
 //
 //  Created by Adam Londa on 11.09.2021.
 //
@@ -8,7 +8,7 @@
 import XCTest
 @testable import Grateful_ly
 
-class Grateful_lyTests: XCTestCase {
+class GratefullyTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
