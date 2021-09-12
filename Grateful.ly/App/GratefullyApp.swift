@@ -8,8 +8,6 @@
 
 import SwiftUI
 
-#warning("TODO: Update project structure naming 🙏")
-
 @main
 struct GratefullyApp: App {
     var body: some Scene {
