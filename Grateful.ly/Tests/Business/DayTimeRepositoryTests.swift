@@ -10,24 +10,17 @@
 import XCTest
 
 class DayTimeRepositoryTests: XCTestCase {
-    func test_when_saving_morning_with_todays_date_then_should_save_morning_with_todays_date() {
+    func test_when_saving_a_dayTime_with_todays_date_then_should_save_the_dayTime_with_todays_date() {
         let sut = repository
         let todaysDate = Date()
+        let allDayTimes = DayTime.allCases
 
-        sut.save(.morning, for: todaysDate)
+        let checkedFlags: [Bool] = allDayTimes.map {
+            sut.save($0, for: todaysDate)
+            return sut.wasChecked(on: todaysDate, in: $0)
+        }
 
-        let wasThisMorningSaved = sut.wasChecked(on: todaysDate, in: .morning)
-        XCTAssert(wasThisMorningSaved)
-    }
-
-    func test_when_saving_evening_with_todays_date_then_should_save_evening_with_todays_date() {
-        let sut = repository
-        let todaysDate = Date()
-
-        sut.save(.evening, for: todaysDate)
-
-        let wasThisMorningSaved = sut.wasChecked(on: todaysDate, in: .evening)
-        XCTAssert(wasThisMorningSaved)
+        XCTAssert(checkedFlags.allSatisfy { $0 })
     }
 }
 

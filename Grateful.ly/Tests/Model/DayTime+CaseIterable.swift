@@ -6,9 +6,10 @@
 //	Copyright © 2021 Adam Londa. All rights reserved.
 //
 
-enum DayTime {
-    case morning
-    case afternoon
-    case evening
-    case night
+@testable import Gratefully
+
+extension DayTime: CaseIterable {
+    public static var allCases: [DayTime] {
+        [ .morning, .afternoon, .evening, .night ]
+    }
 }

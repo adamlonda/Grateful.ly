@@ -11,6 +11,7 @@
 		9142845A26ECB62D005A0E12 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9142845926ECB62D005A0E12 /* MainView.swift */; };
 		9142845C26ECB632005A0E12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9142845B26ECB632005A0E12 /* Assets.xcassets */; };
 		9142845F26ECB632005A0E12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9142845E26ECB632005A0E12 /* Preview Assets.xcassets */; };
+		916FB54126F61A630001043D /* DayTime+CaseIterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916FB54026F61A630001043D /* DayTime+CaseIterable.swift */; };
 		91FF1D7126EE3726000E12F0 /* DayTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FF1D7026EE3726000E12F0 /* DayTime.swift */; };
 		91FF1D7426EE3974000E12F0 /* DayTimeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FF1D7326EE3974000E12F0 /* DayTimeRepository.swift */; };
 		91FF1D7626EE3E98000E12F0 /* DayTimeRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FF1D7526EE3E98000E12F0 /* DayTimeRepositoryTests.swift */; };
@@ -35,6 +36,7 @@
 		9142846026ECB632005A0E12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9142846526ECB632005A0E12 /* GratefullyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GratefullyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9142846B26ECB632005A0E12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		916FB54026F61A630001043D /* DayTime+CaseIterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayTime+CaseIterable.swift"; sourceTree = "<group>"; };
 		91FF1D7026EE3726000E12F0 /* DayTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTime.swift; sourceTree = "<group>"; };
 		91FF1D7326EE3974000E12F0 /* DayTimeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTimeRepository.swift; sourceTree = "<group>"; };
 		91FF1D7526EE3E98000E12F0 /* DayTimeRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTimeRepositoryTests.swift; sourceTree = "<group>"; };
@@ -101,10 +103,19 @@
 		9142846826ECB632005A0E12 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				916FB54226F61ACB0001043D /* Model */,
 				91FF1D7726EE5E74000E12F0 /* Business */,
 				9142846B26ECB632005A0E12 /* Info.plist */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		916FB54226F61ACB0001043D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				916FB54026F61A630001043D /* DayTime+CaseIterable.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		91EB119926ED1F8900B7FC13 /* UI */ = {
@@ -291,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91FF1D7626EE3E98000E12F0 /* DayTimeRepositoryTests.swift in Sources */,
+				916FB54126F61A630001043D /* DayTime+CaseIterable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,6 +19,6 @@ struct DayTimeRepository: DayTimeRepositoryType {
     }
 
     func wasChecked(on date: Date, in dayTime: DayTime) -> Bool {
-        dayTime == .morning || dayTime == .evening
+        dayTime == .morning || dayTime == .afternoon || dayTime == .evening || dayTime == .night
     }
 }
