@@ -12,6 +12,7 @@
 		9142845C26ECB632005A0E12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9142845B26ECB632005A0E12 /* Assets.xcassets */; };
 		9142845F26ECB632005A0E12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9142845E26ECB632005A0E12 /* Preview Assets.xcassets */; };
 		916FB54126F61A630001043D /* DayTime+CaseIterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916FB54026F61A630001043D /* DayTime+CaseIterable.swift */; };
+		916FB54526F63FA30001043D /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916FB54426F63FA30001043D /* LocalStorage.swift */; };
 		91FF1D7126EE3726000E12F0 /* DayTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FF1D7026EE3726000E12F0 /* DayTime.swift */; };
 		91FF1D7426EE3974000E12F0 /* CheckInProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FF1D7326EE3974000E12F0 /* CheckInProvider.swift */; };
 		91FF1D7626EE3E98000E12F0 /* CheckInProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FF1D7526EE3E98000E12F0 /* CheckInProviderTests.swift */; };
@@ -37,6 +38,7 @@
 		9142846526ECB632005A0E12 /* GratefullyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GratefullyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9142846B26ECB632005A0E12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		916FB54026F61A630001043D /* DayTime+CaseIterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayTime+CaseIterable.swift"; sourceTree = "<group>"; };
+		916FB54426F63FA30001043D /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		91FF1D7026EE3726000E12F0 /* DayTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTime.swift; sourceTree = "<group>"; };
 		91FF1D7326EE3974000E12F0 /* CheckInProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInProvider.swift; sourceTree = "<group>"; };
 		91FF1D7526EE3E98000E12F0 /* CheckInProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInProviderTests.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		9142845626ECB62D005A0E12 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				916FB54326F63F640001043D /* Storage */,
 				91FF1D6F26EE3690000E12F0 /* Model */,
 				91FF1D7226EE3859000E12F0 /* Business */,
 				91EB119926ED1F8900B7FC13 /* UI */,
@@ -116,6 +119,14 @@
 				916FB54026F61A630001043D /* DayTime+CaseIterable.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		916FB54326F63F640001043D /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				916FB54426F63FA30001043D /* LocalStorage.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		91EB119926ED1F8900B7FC13 /* UI */ = {
@@ -291,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9142845A26ECB62D005A0E12 /* MainView.swift in Sources */,
+				916FB54526F63FA30001043D /* LocalStorage.swift in Sources */,
 				91FF1D7126EE3726000E12F0 /* DayTime.swift in Sources */,
 				91FF1D7426EE3974000E12F0 /* CheckInProvider.swift in Sources */,
 				9142845826ECB62D005A0E12 /* GratefullyApp.swift in Sources */,
