@@ -9,9 +9,9 @@
 @testable import Gratefully
 import XCTest
 
-class DayTimeRepositoryTests: XCTestCase {
+class CheckInProviderTests: XCTestCase {
     func test_when_saving_a_dayTime_with_todays_date_then_should_save_the_dayTime_with_todays_date() {
-        let sut = repository
+        let sut = checkInProvider
         let todaysDate = Date()
         let allDayTimes = DayTime.allCases
 
@@ -24,8 +24,8 @@ class DayTimeRepositoryTests: XCTestCase {
     }
 }
 
-private extension DayTimeRepositoryTests {
-    var repository: DayTimeRepositoryType {
-        DayTimeRepository()
+private extension CheckInProviderTests {
+    var checkInProvider: CheckInProviderType {
+        CheckInProvider()
     }
 }

@@ -8,12 +8,12 @@
 
 import Foundation
 
-protocol DayTimeRepositoryType {
+protocol CheckInProviderType {
     func save(_ dayTime: DayTime, for date: Date)
     func wasChecked(on date: Date, in dayTime: DayTime) -> Bool
 }
 
-struct DayTimeRepository: DayTimeRepositoryType {
+struct CheckInProvider: CheckInProviderType {
     func save(_ dayTime: DayTime, for date: Date) {
         #warning("Inject storage for actual save 🙏")
     }
