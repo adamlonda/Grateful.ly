@@ -9,6 +9,6 @@
 import Foundation
 
 protocol LocalStorageType {
-    func getCheckIns(for date: Date) -> [DayTime]
+    func getCheckIns(for date: Date) -> [DayTime]?
     func saveCheckIn(_ dayTime: DayTime, for date: Date)
 }

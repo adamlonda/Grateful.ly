@@ -11,21 +11,28 @@ import XCTest
 
 class CheckInProviderTests: XCTestCase {
     func test_when_saving_a_dayTime_with_todays_date_then_should_save_the_dayTime_with_todays_date() {
-        let sut = checkInProvider
         let todaysDate = Date()
         let allDayTimes = DayTime.allCases
 
         let checkedFlags: [Bool] = allDayTimes.map {
+            let storage = LocalStorageMock()
+            let sut = getCheckInProvider(storage: storage)
+
             sut.save($0, for: todaysDate)
-            return sut.wasChecked(on: todaysDate, in: $0)
+
+            return storage.getCheckIns(for: todaysDate)?.contains($0) ?? false
         }
 
         XCTAssert(checkedFlags.allSatisfy { $0 })
     }
+
+    #warning("TODO: Test more cases 🙏")
 }
 
 private extension CheckInProviderTests {
-    var checkInProvider: CheckInProviderType {
-        CheckInProvider()
+    func getCheckInProvider(storage: LocalStorageType) -> CheckInProviderType {
+        CheckInProvider(
+            storage: storage
+        )
     }
 }

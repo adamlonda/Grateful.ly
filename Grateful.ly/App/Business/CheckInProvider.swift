@@ -14,11 +14,18 @@ protocol CheckInProviderType {
 }
 
 struct CheckInProvider: CheckInProviderType {
+    private let storage: LocalStorageType
+
+    init(storage: LocalStorageType) {
+        self.storage = storage
+    }
+
     func save(_ dayTime: DayTime, for date: Date) {
-        #warning("Inject storage for actual save 🙏")
+        storage.saveCheckIn(dayTime, for: date)
     }
 
     func wasChecked(on date: Date, in dayTime: DayTime) -> Bool {
-        dayTime == .morning || dayTime == .afternoon || dayTime == .evening || dayTime == .night
+        storage.getCheckIns(for: date)!
+            .contains { $0 == dayTime }
     }
 }
