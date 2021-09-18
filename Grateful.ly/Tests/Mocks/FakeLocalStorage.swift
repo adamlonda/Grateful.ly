@@ -9,7 +9,7 @@
 import Foundation
 @testable import Gratefully
 
-final class LocalStorageMock: LocalStorageType {
+final class FakeLocalStorage: LocalStorageType {
     private var checkIns = [Date: [DayTime]]()
 
     func getCheckIns(for date: Date) -> [DayTime]? {
@@ -17,6 +17,11 @@ final class LocalStorageMock: LocalStorageType {
     }
 
     func saveCheckIn(_ dayTime: DayTime, for date: Date) {
-        checkIns[date] = [dayTime]
+        if var existing = checkIns[date] {
+            existing.append(dayTime)
+            checkIns[date] = existing
+        } else {
+            checkIns[date] = [dayTime]
+        }
     }
 }

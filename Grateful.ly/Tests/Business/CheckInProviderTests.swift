@@ -10,12 +10,12 @@
 import XCTest
 
 class CheckInProviderTests: XCTestCase {
-    func test_when_saving_a_dayTime_with_todays_date_then_should_save_the_dayTime_with_todays_date() {
+    func test_when_saving_a_dayTime_with_todays_date_then_it_should_be_saved_to_local_storage() {
         let todaysDate = Date()
         let allDayTimes = DayTime.allCases
 
         let checkedFlags: [Bool] = allDayTimes.map {
-            let storage = LocalStorageMock()
+            let storage = FakeLocalStorage()
             let sut = getCheckInProvider(storage: storage)
 
             sut.save($0, for: todaysDate)
