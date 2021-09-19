@@ -14,3 +14,12 @@ protocol LocalStorageType {
 }
 
 #warning("TODO: Make CoreData implementation 🙏")
+
+struct LocalStorage: LocalStorageType {
+    func getCheckIns(for date: Date) -> [DayTime]? {
+        [ .morning, .afternoon, .evening, .night ]
+    }
+
+    func saveCheckIn(_ dayTime: DayTime, for date: Date) {
+    }
+}

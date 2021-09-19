@@ -53,10 +53,8 @@ class LocalStorageTests: XCTestCase {
     #warning("TODO: Test more cases 🙏")
 }
 
-#warning("TODO: Replace with CoreData implementation ‼️")
-
 private extension LocalStorageTests {
     var storage: LocalStorageType {
-        FakeLocalStorage()
+        LocalStorage()
     }
 }
