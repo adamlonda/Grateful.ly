@@ -8,24 +8,32 @@
 
 import Foundation
 
+#warning("TODO: Reflect storageFull at this level too 🙏")
 protocol CheckInProviderType {
     func save(_ dayTime: DayTime, for date: Date)
     func wasChecked(on date: Date, in dayTime: DayTime) -> Bool
 }
 
-struct CheckInProvider: CheckInProviderType {
-    private let storage: LocalStorageType
+struct CheckInProvider<Storage>: CheckInProviderType where Storage: LocalStorageType {
+    private let storage: Storage
 
-    init(storage: LocalStorageType) {
+    init(storage: Storage) {
         self.storage = storage
     }
 
     func save(_ dayTime: DayTime, for date: Date) {
-        storage.saveCheckIn(dayTime, for: date)
+        #warning("TODO: Handle error states appropriately 🙏")
+        _ = storage.saveCheckIn(dayTime, for: date)
     }
 
     func wasChecked(on date: Date, in dayTime: DayTime) -> Bool {
-        storage.getCheckIns(for: date)!
-            .contains { $0 == dayTime }
+        #warning("TODO: Handle error states appropriately 🙏")
+        let result = storage.getCheckIns(for: date)
+        switch result {
+        case .success(let dayTimes):
+            return dayTimes.contains { $0 == dayTime }
+        case .failure:
+            return false
+        }
     }
 }

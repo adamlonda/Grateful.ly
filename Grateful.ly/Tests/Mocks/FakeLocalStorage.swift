@@ -10,13 +10,21 @@ import Foundation
 @testable import Gratefully
 
 final class FakeLocalStorage: LocalStorageType {
+
+    let storageFull = false
+
     private var checkIns = [Date: [DayTime]]()
 
-    func getCheckIns(for date: Date) -> [DayTime]? {
-        checkIns[date]
+    func getCheckIns(for date: Date) -> Result<[DayTime], StorageError> {
+        guard let checkIn = checkIns[date] else {
+            return .failure(.fetchError(message: ""))
+        }
+        return .success(checkIn)
     }
 
-    func saveCheckIn(_ dayTime: DayTime, for date: Date) {
+    func saveCheckIn(_ dayTime: DayTime, for date: Date) -> Result<Void, StorageError> {
         checkIns[date] = [dayTime]
+        return .success(())
     }
+
 }

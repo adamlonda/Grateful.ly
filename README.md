@@ -6,6 +6,7 @@
 ## Frameworks
 
 * SwiftUI
+* Combine
 * CoreData
 
 ## Methodics

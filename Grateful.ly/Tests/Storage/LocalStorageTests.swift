@@ -16,8 +16,10 @@ class LocalStorageTests: XCTestCase {
 
         let checkedFlags: [Bool] = allDayTimes.map {
             let sut = storage
-            sut.saveCheckIn($0, for: todaysDate)
-            return sut.getCheckIns(for: todaysDate)?.contains($0) ?? false
+            _ = sut.saveCheckIn($0, for: todaysDate)
+
+            return sut.getCheckIns(for: todaysDate)
+                .contains($0)
         }
 
         XCTAssert(checkedFlags.allSatisfy { $0 })
@@ -35,13 +37,13 @@ class LocalStorageTests: XCTestCase {
             let checkFlags: [Bool] = otherDayTimes.map {
                 let sut = storage
 
-                sut.saveCheckIn(firstDayTime, for: todaysDate)
-                sut.saveCheckIn($0, for: todaysDate)
+                _ = sut.saveCheckIn(firstDayTime, for: todaysDate)
+                _ = sut.saveCheckIn($0, for: todaysDate)
 
                 let checkIns = sut.getCheckIns(for: todaysDate)
 
-                return checkIns?.contains(firstDayTime) ?? false
-                    && checkIns?.contains($0) ?? false
+                return checkIns.contains(firstDayTime)
+                    && checkIns.contains($0)
             }
 
             return checkFlags.allSatisfy { $0 }
@@ -49,12 +51,10 @@ class LocalStorageTests: XCTestCase {
 
         XCTAssert(checkedFlagsMatrix.allSatisfy { $0 })
     }
-
-    #warning("TODO: Test more cases 🙏")
 }
 
 private extension LocalStorageTests {
-    var storage: LocalStorageType {
-        LocalStorage()
+    var storage: LocalStorage {
+        LocalStorage(devNull: true)
     }
 }

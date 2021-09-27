@@ -20,17 +20,17 @@ class CheckInProviderTests: XCTestCase {
 
             sut.save($0, for: todaysDate)
 
-            return storage.getCheckIns(for: todaysDate)?.contains($0) ?? false
+            return storage.getCheckIns(for: todaysDate).contains($0)
         }
 
         XCTAssert(checkedFlags.allSatisfy { $0 })
     }
-
-    #warning("TODO: Test more cases 🙏")
 }
 
 private extension CheckInProviderTests {
-    func getCheckInProvider(storage: LocalStorageType) -> CheckInProviderType {
+    func getCheckInProvider<Storage: LocalStorageType>(
+        storage: Storage
+    ) -> CheckInProviderType {
         CheckInProvider(
             storage: storage
         )
