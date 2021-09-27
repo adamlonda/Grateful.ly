@@ -15,6 +15,7 @@
 		916FB54526F63FA30001043D /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916FB54426F63FA30001043D /* LocalStorage.swift */; };
 		916FB54826F6549A0001043D /* FakeLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916FB54726F6549A0001043D /* FakeLocalStorage.swift */; };
 		916FB54B26F683D50001043D /* LocalStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916FB54A26F683D50001043D /* LocalStorageTests.swift */; };
+		91A52F632701EC2F00AAC6D7 /* Gratefully.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91A52F612701EC2F00AAC6D7 /* Gratefully.xcdatamodeld */; };
 		91FF1D7126EE3726000E12F0 /* DayTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FF1D7026EE3726000E12F0 /* DayTime.swift */; };
 		91FF1D7426EE3974000E12F0 /* CheckInProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FF1D7326EE3974000E12F0 /* CheckInProvider.swift */; };
 		91FF1D7626EE3E98000E12F0 /* CheckInProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FF1D7526EE3E98000E12F0 /* CheckInProviderTests.swift */; };
@@ -43,6 +44,7 @@
 		916FB54426F63FA30001043D /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		916FB54726F6549A0001043D /* FakeLocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLocalStorage.swift; sourceTree = "<group>"; };
 		916FB54A26F683D50001043D /* LocalStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageTests.swift; sourceTree = "<group>"; };
+		91A52F622701EC2F00AAC6D7 /* Gratefully.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gratefully.xcdatamodel; sourceTree = "<group>"; };
 		91FF1D7026EE3726000E12F0 /* DayTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTime.swift; sourceTree = "<group>"; };
 		91FF1D7326EE3974000E12F0 /* CheckInProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInProvider.swift; sourceTree = "<group>"; };
 		91FF1D7526EE3E98000E12F0 /* CheckInProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInProviderTests.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				916FB54426F63FA30001043D /* LocalStorage.swift */,
+				91A52F612701EC2F00AAC6D7 /* Gratefully.xcdatamodeld */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 			files = (
 				9142845A26ECB62D005A0E12 /* MainView.swift in Sources */,
 				916FB54526F63FA30001043D /* LocalStorage.swift in Sources */,
+				91A52F632701EC2F00AAC6D7 /* Gratefully.xcdatamodeld in Sources */,
 				91FF1D7126EE3726000E12F0 /* DayTime.swift in Sources */,
 				91FF1D7426EE3974000E12F0 /* CheckInProvider.swift in Sources */,
 				9142845826ECB62D005A0E12 /* GratefullyApp.swift in Sources */,
@@ -590,6 +594,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		91A52F612701EC2F00AAC6D7 /* Gratefully.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				91A52F622701EC2F00AAC6D7 /* Gratefully.xcdatamodel */,
+			);
+			currentVersion = 91A52F622701EC2F00AAC6D7 /* Gratefully.xcdatamodel */;
+			path = Gratefully.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9142844C26ECB62C005A0E12 /* Project object */;
 }
