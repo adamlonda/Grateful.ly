@@ -51,6 +51,9 @@ class LocalStorageTests: XCTestCase {
 
         XCTAssert(checkedFlagsMatrix.allSatisfy { $0 })
     }
+
+    #warning("TODO: Test for non-duplication of records 💡")
+    #warning("TODO: Test for deletion of past days checkins 🙏")
 }
 
 private extension LocalStorageTests {

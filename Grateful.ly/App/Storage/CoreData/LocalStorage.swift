@@ -37,18 +37,14 @@ final class LocalStorage: LocalStorageType {
                 .compactMap { $0.dayTime }
         }
         .mapError {
-            StorageError.fetchError(
-                message: $0.localizedDescription
-            )
+            StorageError.fetch(error: $0)
         }
     }
 
     func saveCheckIn(_ dayTime: DayTime, for date: Date) -> Result<Void, StorageError> {
         Result { try container.saveCheckIn(dayTime, for: date) }
             .mapError {
-                StorageError.saveError(
-                    message: $0.localizedDescription
-                )
+                StorageError.save(error: $0)
             }
     }
 

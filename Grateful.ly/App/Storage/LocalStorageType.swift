@@ -15,8 +15,3 @@ protocol LocalStorageType: ObservableObject {
     func getCheckIns(for date: Date) -> Result<[DayTime], StorageError>
     func saveCheckIn(_ dayTime: DayTime, for date: Date) -> Result<Void, StorageError>
 }
-
-enum StorageError: Error {
-    case fetchError(message: String)
-    case saveError(message: String)
-}

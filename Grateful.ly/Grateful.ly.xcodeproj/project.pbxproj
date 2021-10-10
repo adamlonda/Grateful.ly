@@ -15,6 +15,8 @@
 		916FB54526F63FA30001043D /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916FB54426F63FA30001043D /* LocalStorage.swift */; };
 		916FB54826F6549A0001043D /* FakeLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916FB54726F6549A0001043D /* FakeLocalStorage.swift */; };
 		916FB54B26F683D50001043D /* LocalStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916FB54A26F683D50001043D /* LocalStorageTests.swift */; };
+		917F0DE72712E75D002D8C69 /* StorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F0DE62712E75D002D8C69 /* StorageError.swift */; };
+		917F0DE92712E880002D8C69 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F0DE82712E880002D8C69 /* ServiceError.swift */; };
 		9199529427033FB300E6D649 /* LocalStorageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9199529327033FB300E6D649 /* LocalStorageType.swift */; };
 		919952972703835A00E6D649 /* Result+ContainsDayTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919952962703835A00E6D649 /* Result+ContainsDayTime.swift */; };
 		91A52F632701EC2F00AAC6D7 /* Gratefully.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91A52F612701EC2F00AAC6D7 /* Gratefully.xcdatamodeld */; };
@@ -46,6 +48,8 @@
 		916FB54426F63FA30001043D /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		916FB54726F6549A0001043D /* FakeLocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLocalStorage.swift; sourceTree = "<group>"; };
 		916FB54A26F683D50001043D /* LocalStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageTests.swift; sourceTree = "<group>"; };
+		917F0DE62712E75D002D8C69 /* StorageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageError.swift; sourceTree = "<group>"; };
+		917F0DE82712E880002D8C69 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		9199529327033FB300E6D649 /* LocalStorageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageType.swift; sourceTree = "<group>"; };
 		919952962703835A00E6D649 /* Result+ContainsDayTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+ContainsDayTime.swift"; sourceTree = "<group>"; };
 		91A52F622701EC2F00AAC6D7 /* Gratefully.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gratefully.xcdatamodel; sourceTree = "<group>"; };
@@ -93,9 +97,9 @@
 		9142845626ECB62D005A0E12 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				91FF1D6F26EE3690000E12F0 /* DataModel */,
 				916FB54326F63F640001043D /* Storage */,
-				91FF1D6F26EE3690000E12F0 /* Model */,
-				91FF1D7226EE3859000E12F0 /* Business */,
+				91FF1D7226EE3859000E12F0 /* BusinessLogic */,
 				91EB119926ED1F8900B7FC13 /* UI */,
 				9142845726ECB62D005A0E12 /* GratefullyApp.swift */,
 				9142845B26ECB632005A0E12 /* Assets.xcassets */,
@@ -119,7 +123,7 @@
 				91995295270382B800E6D649 /* Extensions */,
 				916FB54926F683A80001043D /* Storage */,
 				916FB54626F654780001043D /* Mocks */,
-				91FF1D7726EE5E74000E12F0 /* Business */,
+				91FF1D7726EE5E74000E12F0 /* BusinessLogic */,
 				9142846B26ECB632005A0E12 /* Info.plist */,
 			);
 			path = Tests;
@@ -128,6 +132,7 @@
 		916FB54326F63F640001043D /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				917F0DE62712E75D002D8C69 /* StorageError.swift */,
 				9199529327033FB300E6D649 /* LocalStorageType.swift */,
 				917F0DE527121FA1002D8C69 /* CoreData */,
 			);
@@ -176,28 +181,29 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		91FF1D6F26EE3690000E12F0 /* Model */ = {
+		91FF1D6F26EE3690000E12F0 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
 				91FF1D7026EE3726000E12F0 /* DayTime.swift */,
 			);
-			path = Model;
+			path = DataModel;
 			sourceTree = "<group>";
 		};
-		91FF1D7226EE3859000E12F0 /* Business */ = {
+		91FF1D7226EE3859000E12F0 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				917F0DE82712E880002D8C69 /* ServiceError.swift */,
 				91FF1D7326EE3974000E12F0 /* CheckInProvider.swift */,
 			);
-			path = Business;
+			path = BusinessLogic;
 			sourceTree = "<group>";
 		};
-		91FF1D7726EE5E74000E12F0 /* Business */ = {
+		91FF1D7726EE5E74000E12F0 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
 				91FF1D7526EE3E98000E12F0 /* CheckInProviderTests.swift */,
 			);
-			path = Business;
+			path = BusinessLogic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,7 +350,9 @@
 				916FB54526F63FA30001043D /* LocalStorage.swift in Sources */,
 				91A52F632701EC2F00AAC6D7 /* Gratefully.xcdatamodeld in Sources */,
 				9199529427033FB300E6D649 /* LocalStorageType.swift in Sources */,
+				917F0DE72712E75D002D8C69 /* StorageError.swift in Sources */,
 				91FF1D7126EE3726000E12F0 /* DayTime.swift in Sources */,
+				917F0DE92712E880002D8C69 /* ServiceError.swift in Sources */,
 				91FF1D7426EE3974000E12F0 /* CheckInProvider.swift in Sources */,
 				9142845826ECB62D005A0E12 /* GratefullyApp.swift in Sources */,
 			);
