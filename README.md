@@ -1,6 +1,6 @@
 # Grateful.ly
 
-* Built under **Xcode 13.0** for **iOS 15**
+* Built under **Xcode 13.1** for **iOS 15**
 * [SwiftLint](https://github.com/realm/SwiftLint) used for linting
 
 ## License
