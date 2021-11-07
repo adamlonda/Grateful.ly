@@ -56,8 +56,23 @@ class LocalStorageTests: XCTestCase {
     #warning("TODO: Test for deletion of past days checkins 🙏")
 }
 
+// MARK: - System Under Test
+
 private extension LocalStorageTests {
-    var storage: LocalStorage {
+    var storage: LocalStorageType {
         LocalStorage(devNull: true)
+    }
+}
+
+// MARK: - Convenience
+
+private extension Result where Success == [DayTime] {
+    func contains(_ dayTime: DayTime) -> Bool {
+        switch self {
+        case .success(let dayTimes):
+            return dayTimes.contains(dayTime)
+        case .failure:
+            return false
+        }
     }
 }

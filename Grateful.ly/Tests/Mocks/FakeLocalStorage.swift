@@ -6,6 +6,7 @@
 //	Copyright © 2021 Adam Londa. All rights reserved.
 //
 
+import Combine
 import Foundation
 @testable import Gratefully
 
@@ -16,7 +17,7 @@ private enum FakeStorageError: Error {
 
 final class FakeLocalStorage: LocalStorageType {
 
-    let storageFull = false
+    let storageFull: AnyPublisher<Bool, Never>
 
     private let hasFetchError: Bool
     private let hasSaveError: Bool
@@ -25,9 +26,10 @@ final class FakeLocalStorage: LocalStorageType {
 
     // MARK: - Init
 
-    init(hasFetchError: Bool = false, hasSaveError: Bool = false) {
+    init(hasFetchError: Bool = false, hasSaveError: Bool = false, storageFull: Bool = false) {
         self.hasFetchError = hasFetchError
         self.hasSaveError = hasSaveError
+        self.storageFull = Just(storageFull).eraseToAnyPublisher()
     }
 
     // MARK: - Protocol Conformance
@@ -55,7 +57,7 @@ final class FakeLocalStorage: LocalStorageType {
 
 }
 
-// MARK: - Convenience Method
+// MARK: - Convenience
 
 extension FakeLocalStorage {
     func contains(_ dayTime: DayTime, for date: Date) -> Bool {

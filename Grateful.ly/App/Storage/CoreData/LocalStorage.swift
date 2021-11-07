@@ -10,13 +10,14 @@ import Combine
 import CoreData
 import Foundation
 
-// MARK: - Protocol Conformance
+// MARK: - Init & Dependencies
 
-final class LocalStorage: LocalStorageType {
-
-    @Published var storageFull = false
+final class LocalStorage {
 
     private let container: NSPersistentContainer
+
+    private let storageFullSubject = PassthroughSubject<Bool, Never>()
+    private var cancellables = Set<AnyCancellable>()
 
     init(devNull: Bool = false) {
         container = NSPersistentContainer(name: "Gratefully")
@@ -28,7 +29,20 @@ final class LocalStorage: LocalStorageType {
         container.loadPersistentStores()
             .map { _ in false }
             .catch { _ in Just(true) }
-            .assign(to: &$storageFull)
+            .sink { [weak self] isStorageFull in
+                self?.storageFullSubject.send(isStorageFull)
+            }
+            .store(in: &cancellables)
+    }
+
+}
+
+// MARK: - Protocol Conformance
+
+extension LocalStorage: LocalStorageType {
+
+    var storageFull: AnyPublisher<Bool, Never> {
+        storageFullSubject.eraseToAnyPublisher()
     }
 
     func getCheckIns(for date: Date) -> Result<[DayTime], StorageError> {

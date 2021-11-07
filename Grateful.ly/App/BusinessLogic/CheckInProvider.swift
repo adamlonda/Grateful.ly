@@ -6,19 +6,36 @@
 //	Copyright © 2021 Adam Londa. All rights reserved.
 //
 
+import Combine
 import Foundation
 
-#warning("TODO: Reflect storageFull at this level too 🙏")
+// MARK: - Protocol
+
 protocol CheckInProviderType {
+
+    var storageFull: AnyPublisher<Bool, Never> { get }
+
     func save(_ dayTime: DayTime, for date: Date) -> Result<Void, ServiceError>
     func wasChecked(on date: Date, in dayTime: DayTime) -> Result<Bool, ServiceError>
+
 }
 
-struct CheckInProvider<Storage>: CheckInProviderType where Storage: LocalStorageType {
-    private let storage: Storage
+// MARK: - Init & Dependencies
 
-    init(storage: Storage) {
+final class CheckInProvider {
+    private let storage: LocalStorageType
+
+    init(storage: LocalStorageType) {
         self.storage = storage
+    }
+}
+
+// MARK: - Protocol Conformance
+
+extension CheckInProvider: CheckInProviderType {
+
+    var storageFull: AnyPublisher<Bool, Never> {
+        storage.storageFull
     }
 
     func save(_ dayTime: DayTime, for date: Date) -> Result<Void, ServiceError> {
@@ -31,4 +48,5 @@ struct CheckInProvider<Storage>: CheckInProviderType where Storage: LocalStorage
             .map { $0.contains { $0 == dayTime } }
             .mapError { ServiceError.storage(error: $0) }
     }
+
 }

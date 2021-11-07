@@ -108,13 +108,34 @@ class CheckInProviderTests: XCTestCase {
         XCTAssert(try errorOnLoad.get())
     }
 
+    // MARK: - storageFull
+
+    func test_when_storage_storageFull_is_false_then_storageFull_should_be_false() throws {
+        let sut = getCheckInProvider(
+            storage: FakeLocalStorage()
+        )
+
+        let storageFull = try awaitPublisher(sut.storageFull)
+        XCTAssertFalse(storageFull)
+    }
+
+    func test_when_storage_storageFull_is_true_then_storageFull_should_be_true() throws {
+        let sut = getCheckInProvider(
+            storage: FakeLocalStorage(
+                storageFull: true
+            )
+        )
+
+        let storageFull = try awaitPublisher(sut.storageFull)
+        XCTAssert(storageFull)
+    }
 }
 
 // MARK: - System Under Test
 
 private extension CheckInProviderTests {
-    func getCheckInProvider<Storage: LocalStorageType>(
-        storage: Storage
+    func getCheckInProvider(
+        storage: LocalStorageType
     ) -> CheckInProviderType {
         CheckInProvider(
             storage: storage

@@ -9,8 +9,8 @@
 import Combine
 import Foundation
 
-protocol LocalStorageType: ObservableObject {
-    var storageFull: Bool { get }
+protocol LocalStorageType {
+    var storageFull: AnyPublisher<Bool, Never> { get }
 
     func getCheckIns(for date: Date) -> Result<[DayTime], StorageError>
     func saveCheckIn(_ dayTime: DayTime, for date: Date) -> Result<Void, StorageError>
