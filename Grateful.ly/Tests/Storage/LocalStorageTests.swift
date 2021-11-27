@@ -14,45 +14,49 @@ class LocalStorageTests: XCTestCase {
         let todaysDate = Date()
         let allDayTimes = DayTime.allCases
 
-        let checkedFlags: [Bool] = allDayTimes.map {
+        allDayTimes.forEach {
             let sut = storage
             _ = sut.saveCheckIn($0, for: todaysDate)
-
-            return sut.getCheckIns(for: todaysDate)
-                .contains($0)
+            XCTAssert(sut.getCheckIns(for: todaysDate).contains($0))
         }
-
-        XCTAssert(checkedFlags.allSatisfy { $0 })
     }
 
     func test_when_saving_second_dayTime_with_todays_date_then_the_second_dayTime_should_be_appended() {
         let todaysDate = Date()
         let allDayTimes = DayTime.allCases
 
-        let checkedFlagsMatrix: [Bool] = allDayTimes.map { firstDayTime in
+        allDayTimes.forEach { firstDayTime in
             let otherDayTimes = DayTime.allCases.filter {
                 $0 != firstDayTime
             }
 
-            let checkFlags: [Bool] = otherDayTimes.map {
+            otherDayTimes.forEach {
                 let sut = storage
 
                 _ = sut.saveCheckIn(firstDayTime, for: todaysDate)
                 _ = sut.saveCheckIn($0, for: todaysDate)
 
                 let checkIns = sut.getCheckIns(for: todaysDate)
-
-                return checkIns.contains(firstDayTime)
-                    && checkIns.contains($0)
+                XCTAssert(checkIns.contains(firstDayTime) && checkIns.contains($0))
             }
-
-            return checkFlags.allSatisfy { $0 }
         }
-
-        XCTAssert(checkedFlagsMatrix.allSatisfy { $0 })
     }
 
-    #warning("TODO: Test for non-duplication of records 💡")
+    func test_when_saving_the_same_dayTime_twice_then_it_should_not_be_duplicated() throws {
+        let todaysDate = Date()
+        let allDayTimes = DayTime.allCases
+
+        try allDayTimes.forEach {
+            let sut = storage
+
+            _ = sut.saveCheckIn($0, for: todaysDate)
+            _ = sut.saveCheckIn($0, for: todaysDate)
+
+            let checkIns = sut.getCheckIns(for: todaysDate)
+            XCTAssertEqual(try checkIns.get().count, 1)
+        }
+    }
+
     #warning("TODO: Test for deletion of past days checkins 🙏")
 }
 

@@ -56,10 +56,19 @@ extension LocalStorage: LocalStorageType {
     }
 
     func saveCheckIn(_ dayTime: DayTime, for date: Date) -> Result<Void, StorageError> {
-        Result { try container.saveCheckIn(dayTime, for: date) }
-            .mapError {
-                StorageError.save(error: $0)
+        Result {
+            let existingCheckins = try container.getCheckIns(for: date)
+            let alreadyExists = existingCheckins.contains {
+                $0.dayTime == dayTime
             }
+
+            if alreadyExists == false {
+                try container.saveCheckIn(dayTime, for: date)
+            }
+        }
+        .mapError {
+            StorageError.save(error: $0)
+        }
     }
 
 }
