@@ -9,4 +9,5 @@
 enum StorageError: Error {
     case fetch(error: Error)
     case save(error: Error)
+    case delete(error: Error)
 }

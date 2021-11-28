@@ -21,13 +21,42 @@ class CheckInProviderTests: XCTestCase {
             let storage = FakeLocalStorage()
             let sut = getCheckInProvider(storage: storage)
 
-            let saveResult = sut.save(dayTime, for: todaysDate)
+            let saveResult = sut.save(dayTime, andDeleteOtherThanOf: todaysDate)
 
             let saveSuccessful: Result<Bool, Never> = saveResult
                 .map { _ in storage.contains(dayTime, for: todaysDate) }
                 .flatMapError { _ in .success(false) }
 
             XCTAssert(try saveSuccessful.get())
+        }
+    }
+
+    func test_when_save_is_called_and_old_checkins_exists_then_the_older_checkins_should_be_deleted() {
+        let allDayTimes = DayTime.allCases
+        let todaysDate = Date()
+
+        guard let yesterdaysDate = todaysDate.dayBefore else {
+            XCTFail("Yesterday date's mock should not be nil ‼️")
+            return
+        }
+
+        for dayTime in allDayTimes {
+            let storage = FakeLocalStorage(
+                existingCheckins: [
+                    yesterdaysDate: [dayTime]
+                ]
+            )
+            let sut = getCheckInProvider(storage: storage)
+
+            let saveResult = sut.save(dayTime, andDeleteOtherThanOf: todaysDate)
+
+            let savedWithCleanup: Result<Bool, Never> = saveResult
+                .map { _ in
+                    storage.contains(dayTime, for: todaysDate) && !storage.contains(dayTime, for: yesterdaysDate)
+                }
+                .flatMapError { _ in .success(false) }
+
+            XCTAssert(try savedWithCleanup.get())
         }
     }
 
@@ -38,7 +67,7 @@ class CheckInProviderTests: XCTestCase {
             )
         )
 
-        let saveResult = sut.save(.night, for: Date())
+        let saveResult = sut.save(.night, andDeleteOtherThanOf: Date())
 
         let errorOnSave: Result<Bool, Never> = saveResult
             .map { _ in false }

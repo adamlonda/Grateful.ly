@@ -15,7 +15,7 @@ protocol CheckInProviderType {
 
     var storageFull: AnyPublisher<Bool, Never> { get }
 
-    func save(_ dayTime: DayTime, for date: Date) -> Result<Void, ServiceError>
+    func save(_ dayTime: DayTime, andDeleteOtherThanOf date: Date) -> Result<Void, ServiceError>
     func wasChecked(on date: Date, in dayTime: DayTime) -> Result<Bool, ServiceError>
 
 }
@@ -38,8 +38,9 @@ extension CheckInProvider: CheckInProviderType {
         storage.storageFull
     }
 
-    func save(_ dayTime: DayTime, for date: Date) -> Result<Void, ServiceError> {
+    func save(_ dayTime: DayTime, andDeleteOtherThanOf date: Date) -> Result<Void, ServiceError> {
         storage.saveCheckIn(dayTime, for: date)
+            .flatMap { storage.deleteCheckIns(otherThan: date) }
             .mapError { ServiceError.storage(error: $0) }
     }
 

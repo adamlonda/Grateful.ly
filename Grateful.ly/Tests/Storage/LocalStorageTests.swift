@@ -32,7 +32,6 @@ class LocalStorageTests: XCTestCase {
 
             otherDayTimes.forEach {
                 let sut = storage
-
                 _ = sut.saveCheckIn(firstDayTime, for: todaysDate)
                 _ = sut.saveCheckIn($0, for: todaysDate)
 
@@ -48,7 +47,6 @@ class LocalStorageTests: XCTestCase {
 
         try allDayTimes.forEach {
             let sut = storage
-
             _ = sut.saveCheckIn($0, for: todaysDate)
             _ = sut.saveCheckIn($0, for: todaysDate)
 
@@ -57,7 +55,26 @@ class LocalStorageTests: XCTestCase {
         }
     }
 
-    #warning("TODO: Test for deletion of past days checkins 🙏")
+    func test_when_deleting_old_checkins_then_old_checkins_should_be_deleted() throws {
+        let allDayTimes = DayTime.allCases
+        let todaysDate = Date()
+
+        guard let yesterdaysDate = todaysDate.dayBefore else {
+            XCTFail("Yesterday date's mock should not be nil ‼️")
+            return
+        }
+
+        try allDayTimes.forEach {
+            let sut = storage
+            _ = sut.saveCheckIn($0, for: yesterdaysDate)
+            _ = sut.saveCheckIn($0, for: todaysDate)
+
+            _ = sut.deleteCheckIns(otherThan: todaysDate)
+
+            let yesterdaysCheckIns = sut.getCheckIns(for: yesterdaysDate)
+            XCTAssert(try yesterdaysCheckIns.get().isEmpty)
+        }
+    }
 }
 
 // MARK: - System Under Test

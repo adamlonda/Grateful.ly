@@ -71,9 +71,22 @@ extension LocalStorage: LocalStorageType {
         }
     }
 
+    func deleteCheckIns(otherThan date: Date) -> Result<Void, StorageError> {
+        Result {
+            let checkinsToDelete = try container.getCheckIns(exceptOf: date)
+            checkinsToDelete.forEach(
+                container.viewContext.delete
+            )
+            try container.viewContext.save()
+        }
+        .mapError {
+            StorageError.delete(error: $0)
+        }
+    }
+
 }
 
-// MARK: - CoreData Handling
+// MARK: - Container: Load Stores
 
 private extension NSPersistentContainer {
     func loadPersistentStores() -> AnyPublisher<NSPersistentStoreDescription, NSError> {
@@ -87,90 +100,83 @@ private extension NSPersistentContainer {
             }
         }.eraseToAnyPublisher()
     }
+}
 
+// MARK: - Date Helper Methods
+
+private extension NSPersistentContainer {
+    func getDay(from date: Date, by calendar: Calendar = .current) -> Int16 {
+        Int16(calendar.component(.day, from: date))
+    }
+
+    func getMonth(from date: Date, by calendar: Calendar = .current) -> Int16 {
+        Int16(calendar.component(.month, from: date))
+    }
+
+    func getYear(from date: Date, by calendar: Calendar = .current) -> Int64 {
+        Int64(calendar.component(.year, from: date))
+    }
+}
+
+// MARK: - Container: Save Checkin
+
+private extension NSPersistentContainer {
     func saveCheckIn(_ dayTime: DayTime, for date: Date) throws {
         let newEntity = CheckInStorageEntity(context: self.viewContext)
-        let calendar = Calendar.current
 
-        newEntity.day = date.getDay(by: calendar)
-        newEntity.month = date.getMonth(by: calendar)
-        newEntity.year = date.getYear(by: calendar)
+        newEntity.day = getDay(from: date)
+        newEntity.month = getMonth(from: date)
+        newEntity.year = getYear(from: date)
 
         newEntity.dayTimeCode = dayTime.code
 
         try self.viewContext.save()
     }
+}
+
+// MARK: - Container: Get Checkins
+
+private extension NSPersistentContainer {
+    func dayPredicate(format: String, from date: Date) -> NSPredicate {
+        NSPredicate(format: format, NSNumber(value: getDay(from: date)))
+    }
+
+    func monthPredicate(format: String, from date: Date) -> NSPredicate {
+        NSPredicate(format: format, NSNumber(value: getMonth(from: date)))
+    }
+
+    func yearPredicate(format: String, from date: Date) -> NSPredicate {
+        NSPredicate(format: format, NSNumber(value: getYear(from: date)))
+    }
 
     func getCheckIns(for date: Date) throws -> [CheckInStorageEntity] {
-        let calendar = Calendar.current
-
-        let day = date.getDay(by: calendar)
-        let dayPredicate = NSPredicate(format: "day = %@", NSNumber(value: day))
-
-        let month = date.getMonth(by: calendar)
-        let monthPredicate = NSPredicate(format: "month = %@", NSNumber(value: month))
-
-        let year = date.getYear(by: calendar)
-        let yearPredicate = NSPredicate(format: "year = %@", NSNumber(value: year))
-
-        let fetchRequest = CheckInStorageEntity.fetchRequest()
-
-        fetchRequest.predicate = NSCompoundPredicate(
-            andPredicateWithSubpredicates: [
-                dayPredicate,
-                monthPredicate,
-                yearPredicate
-            ]
+        try getCheckIns(
+            with: NSCompoundPredicate(
+                andPredicateWithSubpredicates: [
+                    dayPredicate(format: "day = %@", from: date),
+                    monthPredicate(format: "month = %@", from: date),
+                    yearPredicate(format: "year = %@", from: date)
+                ]
+            )
         )
+    }
+
+    func getCheckIns(exceptOf date: Date) throws -> [CheckInStorageEntity] {
+        try getCheckIns(
+            with: NSCompoundPredicate(
+                orPredicateWithSubpredicates: [
+                    dayPredicate(format: "NOT (day = %@)", from: date),
+                    monthPredicate(format: "NOT (month = %@)", from: date),
+                    yearPredicate(format: "NOT (year = %@)", from: date)
+                ]
+            )
+        )
+    }
+
+    func getCheckIns(with compoundPredicate: NSCompoundPredicate) throws -> [CheckInStorageEntity] {
+        let fetchRequest = CheckInStorageEntity.fetchRequest()
+        fetchRequest.predicate = compoundPredicate
 
         return try self.viewContext.fetch(fetchRequest)
-    }
-}
-
-// MARK: - Data Mapping
-
-private extension CheckInStorageEntity {
-    var dayTime: DayTime? {
-        switch self.dayTimeCode {
-        case 0:
-            return .morning
-        case 1:
-            return .afternoon
-        case 2:
-            return .evening
-        case 3:
-            return .night
-        default:
-            return nil
-        }
-    }
-}
-
-private extension DayTime {
-    var code: Int16 {
-        switch self {
-        case .morning:
-            return 0
-        case .afternoon:
-            return 1
-        case .evening:
-            return 2
-        case .night:
-            return 3
-        }
-    }
-}
-
-private extension Date {
-    func getDay(by calendar: Calendar) -> Int16 {
-        Int16(calendar.component(.day, from: self))
-    }
-
-    func getMonth(by calendar: Calendar) -> Int16 {
-        Int16(calendar.component(.month, from: self))
-    }
-
-    func getYear(by calendar: Calendar) -> Int64 {
-        Int64(calendar.component(.year, from: self))
     }
 }

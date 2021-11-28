@@ -14,4 +14,5 @@ protocol LocalStorageType {
 
     func getCheckIns(for date: Date) -> Result<[DayTime], StorageError>
     func saveCheckIn(_ dayTime: DayTime, for date: Date) -> Result<Void, StorageError>
+    func deleteCheckIns(otherThan date: Date) -> Result<Void, StorageError>
 }

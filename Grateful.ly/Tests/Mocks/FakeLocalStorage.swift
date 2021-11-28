@@ -22,14 +22,20 @@ final class FakeLocalStorage: LocalStorageType {
     private let hasFetchError: Bool
     private let hasSaveError: Bool
 
-    private var checkIns = [Date: [DayTime]]()
+    private var checkIns: [Date: [DayTime]]
 
     // MARK: - Init
 
-    init(hasFetchError: Bool = false, hasSaveError: Bool = false, storageFull: Bool = false) {
+    init(
+        hasFetchError: Bool = false,
+        hasSaveError: Bool = false,
+        storageFull: Bool = false,
+        existingCheckins: [Date: [DayTime]] = [Date: [DayTime]]()
+    ) {
         self.hasFetchError = hasFetchError
         self.hasSaveError = hasSaveError
         self.storageFull = Just(storageFull).eraseToAnyPublisher()
+        checkIns = existingCheckins
     }
 
     // MARK: - Protocol Conformance
@@ -55,6 +61,11 @@ final class FakeLocalStorage: LocalStorageType {
         return .success(())
     }
 
+    func deleteCheckIns(otherThan date: Date) -> Result<Void, StorageError> {
+        checkIns.keys.filter { $0 != date }
+            .forEach { checkIns.removeValue(forKey: $0) }
+        return .success(())
+    }
 }
 
 // MARK: - Convenience
