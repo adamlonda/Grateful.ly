@@ -11,6 +11,9 @@
 		9142845A26ECB62D005A0E12 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9142845926ECB62D005A0E12 /* MainView.swift */; };
 		9142845C26ECB632005A0E12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9142845B26ECB632005A0E12 /* Assets.xcassets */; };
 		9142845F26ECB632005A0E12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9142845E26ECB632005A0E12 /* Preview Assets.xcassets */; };
+		916404022795BF2500C76DE6 /* TimeChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916404012795BF2500C76DE6 /* TimeChecker.swift */; };
+		916404042795C26900C76DE6 /* DayTimeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916404032795C26900C76DE6 /* DayTimeProvider.swift */; };
+		916404062795C90700C76DE6 /* DayTimeProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916404052795C90700C76DE6 /* DayTimeProviderTests.swift */; };
 		916FB54126F61A630001043D /* DayTime+CaseIterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916FB54026F61A630001043D /* DayTime+CaseIterable.swift */; };
 		916FB54526F63FA30001043D /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916FB54426F63FA30001043D /* LocalStorage.swift */; };
 		916FB54826F6549A0001043D /* FakeLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916FB54726F6549A0001043D /* FakeLocalStorage.swift */; };
@@ -22,6 +25,7 @@
 		91A52F632701EC2F00AAC6D7 /* Gratefully.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91A52F612701EC2F00AAC6D7 /* Gratefully.xcdatamodeld */; };
 		91C84198276628C200993896 /* LocalStorage+DataMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C84197276628C200993896 /* LocalStorage+DataMapping.swift */; };
 		91E429CE2781DCB400D6032F /* Date+DayBefore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E429CD2781DCB400D6032F /* Date+DayBefore.swift */; };
+		91FC364D279DC2C400FADDB4 /* FakeTimeChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC364C279DC2C400FADDB4 /* FakeTimeChecker.swift */; };
 		91FF1D7126EE3726000E12F0 /* DayTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FF1D7026EE3726000E12F0 /* DayTime.swift */; };
 		91FF1D7426EE3974000E12F0 /* CheckInProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FF1D7326EE3974000E12F0 /* CheckInProvider.swift */; };
 		91FF1D7626EE3E98000E12F0 /* CheckInProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FF1D7526EE3E98000E12F0 /* CheckInProviderTests.swift */; };
@@ -46,6 +50,9 @@
 		9142846026ECB632005A0E12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9142846526ECB632005A0E12 /* GratefullyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GratefullyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9142846B26ECB632005A0E12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		916404012795BF2500C76DE6 /* TimeChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeChecker.swift; sourceTree = "<group>"; };
+		916404032795C26900C76DE6 /* DayTimeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTimeProvider.swift; sourceTree = "<group>"; };
+		916404052795C90700C76DE6 /* DayTimeProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTimeProviderTests.swift; sourceTree = "<group>"; };
 		916FB54026F61A630001043D /* DayTime+CaseIterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayTime+CaseIterable.swift"; sourceTree = "<group>"; };
 		916FB54426F63FA30001043D /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		916FB54726F6549A0001043D /* FakeLocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLocalStorage.swift; sourceTree = "<group>"; };
@@ -57,6 +64,7 @@
 		91A52F622701EC2F00AAC6D7 /* Gratefully.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gratefully.xcdatamodel; sourceTree = "<group>"; };
 		91C84197276628C200993896 /* LocalStorage+DataMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalStorage+DataMapping.swift"; sourceTree = "<group>"; };
 		91E429CD2781DCB400D6032F /* Date+DayBefore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+DayBefore.swift"; sourceTree = "<group>"; };
+		91FC364C279DC2C400FADDB4 /* FakeTimeChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTimeChecker.swift; sourceTree = "<group>"; };
 		91FF1D7026EE3726000E12F0 /* DayTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTime.swift; sourceTree = "<group>"; };
 		91FF1D7326EE3974000E12F0 /* CheckInProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInProvider.swift; sourceTree = "<group>"; };
 		91FF1D7526EE3E98000E12F0 /* CheckInProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInProviderTests.swift; sourceTree = "<group>"; };
@@ -102,7 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				91FF1D6F26EE3690000E12F0 /* Model */,
-				916FB54326F63F640001043D /* Storage */,
+				916403FF2795BDFD00C76DE6 /* System */,
 				91FF1D7226EE3859000E12F0 /* BusinessLogic */,
 				91EB119926ED1F8900B7FC13 /* UI */,
 				9142845726ECB62D005A0E12 /* GratefullyApp.swift */,
@@ -125,12 +133,29 @@
 			isa = PBXGroup;
 			children = (
 				91995295270382B800E6D649 /* Convenience */,
-				916FB54926F683A80001043D /* Storage */,
-				916FB54626F654780001043D /* Mocks */,
+				916404002795BEAA00C76DE6 /* System */,
+				916FB54626F654780001043D /* Fakes */,
 				91FF1D7726EE5E74000E12F0 /* BusinessLogic */,
 				9142846B26ECB632005A0E12 /* Info.plist */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		916403FF2795BDFD00C76DE6 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				916404012795BF2500C76DE6 /* TimeChecker.swift */,
+				916FB54326F63F640001043D /* Storage */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		916404002795BEAA00C76DE6 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				916FB54926F683A80001043D /* Storage */,
+			);
+			path = System;
 			sourceTree = "<group>";
 		};
 		916FB54326F63F640001043D /* Storage */ = {
@@ -143,12 +168,13 @@
 			path = Storage;
 			sourceTree = "<group>";
 		};
-		916FB54626F654780001043D /* Mocks */ = {
+		916FB54626F654780001043D /* Fakes */ = {
 			isa = PBXGroup;
 			children = (
 				916FB54726F6549A0001043D /* FakeLocalStorage.swift */,
+				91FC364C279DC2C400FADDB4 /* FakeTimeChecker.swift */,
 			);
-			path = Mocks;
+			path = Fakes;
 			sourceTree = "<group>";
 		};
 		916FB54926F683A80001043D /* Storage */ = {
@@ -200,6 +226,7 @@
 			children = (
 				917F0DE82712E880002D8C69 /* ServiceError.swift */,
 				91FF1D7326EE3974000E12F0 /* CheckInProvider.swift */,
+				916404032795C26900C76DE6 /* DayTimeProvider.swift */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
@@ -208,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				91FF1D7526EE3E98000E12F0 /* CheckInProviderTests.swift */,
+				916404052795C90700C76DE6 /* DayTimeProviderTests.swift */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
@@ -352,9 +380,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				916404042795C26900C76DE6 /* DayTimeProvider.swift in Sources */,
 				9142845A26ECB62D005A0E12 /* MainView.swift in Sources */,
 				916FB54526F63FA30001043D /* LocalStorage.swift in Sources */,
 				91A52F632701EC2F00AAC6D7 /* Gratefully.xcdatamodeld in Sources */,
+				916404022795BF2500C76DE6 /* TimeChecker.swift in Sources */,
 				9199529427033FB300E6D649 /* LocalStorageType.swift in Sources */,
 				917F0DE72712E75D002D8C69 /* StorageError.swift in Sources */,
 				91FF1D7126EE3726000E12F0 /* DayTime.swift in Sources */,
@@ -372,6 +402,8 @@
 				91FF1D7626EE3E98000E12F0 /* CheckInProviderTests.swift in Sources */,
 				916FB54B26F683D50001043D /* LocalStorageTests.swift in Sources */,
 				917F856127494E970015E0EE /* XCTestCase+AwaitPublisher.swift in Sources */,
+				91FC364D279DC2C400FADDB4 /* FakeTimeChecker.swift in Sources */,
+				916404062795C90700C76DE6 /* DayTimeProviderTests.swift in Sources */,
 				91E429CE2781DCB400D6032F /* Date+DayBefore.swift in Sources */,
 				916FB54826F6549A0001043D /* FakeLocalStorage.swift in Sources */,
 				916FB54126F61A630001043D /* DayTime+CaseIterable.swift in Sources */,
